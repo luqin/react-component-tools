@@ -6,7 +6,7 @@
 [![devDependency Status][dev-deps-badge]][dev-deps]
 [![peerDependency Status][peer-deps-badge]][peer-deps]
 
-[npm-badge]: https://img.shields.io/npm/v/react-component-tools.svg?style=flat-square
+[npm-badge]: http://badge.fury.io/js/react-component-tools.svg
 [npm]: http://badge.fury.io/js/react-component-tools
 
 [deps-badge]: https://david-dm.org/uooo/react-component-tools.svg
