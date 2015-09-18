@@ -21,6 +21,9 @@
 [travis-ci-image]: https://travis-ci.org/uooo/react-component-tools.svg
 [travis-ci-url]: https://travis-ci.org/uooo/react-component-tools
 
+[gitter-badge]: https://img.shields.io/badge/gitter-join%20chat-f81a65.svg?style=flat-square
+[gitter]: https://gitter.im/uooo/react-component-tools?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 
 This package provides common gulp tasks for building react components with:
 
