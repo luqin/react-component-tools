@@ -64,7 +64,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "lint": "",
+    "lint": "echo \"no lint yet\"",
     "lib": "gulp lib",
     "unit": "echo \"no tests yet\"",
     "test": "npm run lint && npm run unit"
