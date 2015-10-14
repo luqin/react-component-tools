@@ -9,20 +9,20 @@
 [npm-badge]: http://badge.fury.io/js/react-component-tools.svg
 [npm]: http://badge.fury.io/js/react-component-tools
 
-[deps-badge]: https://david-dm.org/io3/react-component-tools.svg
-[deps]: https://david-dm.org/io3/react-component-tools
+[deps-badge]: https://david-dm.org/luqin/react-component-tools.svg
+[deps]: https://david-dm.org/luqin/react-component-tools
 
-[dev-deps-badge]: https://david-dm.org/io3/react-component-tools/dev-status.svg
-[dev-deps]: https://david-dm.org/io3/react-component-tools#info=devDependencies
+[dev-deps-badge]: https://david-dm.org/luqin/react-component-tools/dev-status.svg
+[dev-deps]: https://david-dm.org/luqin/react-component-tools#info=devDependencies
 
-[peer-deps-badge]: https://david-dm.org/io3/react-component-tools/peer-status.svg
-[peer-deps]: https://david-dm.org/io3/react-component-tools#info=peerDependencies 
+[peer-deps-badge]: https://david-dm.org/luqin/react-component-tools/peer-status.svg
+[peer-deps]: https://david-dm.org/luqin/react-component-tools#info=peerDependencies 
 
-[travis-ci-image]: https://travis-ci.org/io3/react-component-tools.svg
-[travis-ci-url]: https://travis-ci.org/io3/react-component-tools
+[travis-ci-image]: https://travis-ci.org/luqin/react-component-tools.svg
+[travis-ci-url]: https://travis-ci.org/luqin/react-component-tools
 
 [gitter-badge]: https://img.shields.io/badge/gitter-join%20chat-f81a65.svg?style=flat-square
-[gitter]: https://gitter.im/io3/react-component-tools?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[gitter]: https://gitter.im/luqin/react-component-tools?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 
 This package provides common gulp tasks for building react components with:
