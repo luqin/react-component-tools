@@ -1,6 +1,16 @@
 import path from 'path';
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const AUTOPREFIXER_BROWSERS = [
+    'Android >= 4',
+    'Chrome >= 35',
+    'Firefox >= 31',
+    'Explorer >= 9',
+    'iOS >= 7',
+    'Opera >= 12',
+    'Safari >= 7.1'
+];
+
 export default {
     getResolveLoader: function () {
         return {

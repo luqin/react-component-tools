@@ -106,7 +106,8 @@ export default function (isDevelopment, config) {
         })(),
         resolve: {
             extensions: ['', '.js', '.jsx'],
-            modulesDirectories: ['node_modules', 'web_modules']
+            modulesDirectories: ['node_modules', 'web_modules'],
+            alias: config.example.alias
         }
     };
 }
