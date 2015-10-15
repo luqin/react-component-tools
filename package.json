@@ -1,6 +1,6 @@
 {
   "name": "react-component-tools",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "Gulp Build Tasks for React Component Projects",
   "main": "lib/index.js",
   "author": "",
@@ -23,6 +23,7 @@
     "eslint": "1.6.0",
     "eslint-plugin-react": "3.5.1",
     "extract-text-webpack-plugin": "^0.8.2",
+    "fbjs": "0.3.2",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
