@@ -97,3 +97,26 @@ initGulpTasks(gulp, taskConfig);
 ### Task Config
 
 You can customise the tasks to match your project structure by changing the config.
+
+### Gulp Tasks
+
+* dev
+  * `gulp dev`
+* lib
+  * `gulp build:lib`
+  * `gulp watch:lib`
+* dist
+  * `gulp build:dist`
+* examples
+  * `gulp build:examples`
+  * `gulp watch:examples`
+* bump
+  * `gulp bump`
+  * `gulp bump:minor`
+  * `gulp bump:major`
+* release
+  * `gulp publish:tag`
+  * `gulp publish:npm`
+  * `gulp publish:cnpm`
+  * `gulp publish:examples` publish to gh-pages
+  * `gulp release`
