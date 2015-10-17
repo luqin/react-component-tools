@@ -37,6 +37,7 @@ function initTasks(gulp, config) {
         pkgName: pkg.name,
         dependencies: pkg.deps,
         name: name,
+        lib: './lib',
         dist: './dist',
         scripts: {
             entry: './src/index.js',

@@ -110,6 +110,8 @@ You can customise the tasks to match your project structure by changing the conf
 * examples
   * `gulp build:examples`
   * `gulp watch:examples`
+* build
+  * `gulp build`
 * bump
   * `gulp bump`
   * `gulp bump:minor`
