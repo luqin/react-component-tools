@@ -6,23 +6,23 @@
 [![devDependency Status][dev-deps-badge]][dev-deps]
 [![peerDependency Status][peer-deps-badge]][peer-deps]
 
-[npm-badge]: http://badge.fury.io/js/react-component-tools.svg
-[npm]: http://badge.fury.io/js/react-component-tools
+[npm-badge]: http://badge.fury.io/js/react-pack.svg
+[npm]: http://badge.fury.io/js/react-pack
 
-[deps-badge]: https://david-dm.org/luqin/react-component-tools.svg
-[deps]: https://david-dm.org/luqin/react-component-tools
+[deps-badge]: https://david-dm.org/luqin/react-pack.svg
+[deps]: https://david-dm.org/luqin/react-pack
 
-[dev-deps-badge]: https://david-dm.org/luqin/react-component-tools/dev-status.svg
-[dev-deps]: https://david-dm.org/luqin/react-component-tools#info=devDependencies
+[dev-deps-badge]: https://david-dm.org/luqin/react-pack/dev-status.svg
+[dev-deps]: https://david-dm.org/luqin/react-pack#info=devDependencies
 
-[peer-deps-badge]: https://david-dm.org/luqin/react-component-tools/peer-status.svg
-[peer-deps]: https://david-dm.org/luqin/react-component-tools#info=peerDependencies 
+[peer-deps-badge]: https://david-dm.org/luqin/react-pack/peer-status.svg
+[peer-deps]: https://david-dm.org/luqin/react-pack#info=peerDependencies 
 
-[travis-ci-image]: https://travis-ci.org/luqin/react-component-tools.svg
-[travis-ci-url]: https://travis-ci.org/luqin/react-component-tools
+[travis-ci-image]: https://travis-ci.org/luqin/react-pack.svg
+[travis-ci-url]: https://travis-ci.org/luqin/react-pack
 
 [gitter-badge]: https://img.shields.io/badge/gitter-join%20chat-f81a65.svg?style=flat-square
-[gitter]: https://gitter.im/luqin/react-component-tools?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[gitter]: https://gitter.im/luqin/react-pack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
 
 This package provides common gulp tasks for building react components with:
@@ -81,14 +81,14 @@ example
 ## Usage
 
 ```
-npm install --save-dev gulp react-component-tools
+npm install --save-dev gulp react-pack
 ```
 
 In your gulpfile, call this package with your `gulp` instance and `config`. It will add the tasks to gulp for you. You can also add your own tasks if you want.
 
 ```js
 var gulp = require('gulp'),
-	initGulpTasks = require('react-component-tools'),
+	initGulpTasks = require('react-pack'),
 	taskConfig = require('./config');
 
 initGulpTasks(gulp, taskConfig);
