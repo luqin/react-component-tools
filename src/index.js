@@ -1,10 +1,8 @@
-import defaults from 'defaults';
 import capitalize from  'capitalize';
 import camelCase from 'camelcase';
 import yargs from 'yargs';
 import gutil from 'gulp-util';
 import _ from 'lodash';
-import invariant from 'fbjs/lib/invariant';
 
 // Extract package.json metadata
 function readPackageJSON() {

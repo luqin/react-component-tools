@@ -1,14 +1,18 @@
 {
-  "name": "react-component-tools",
+  "name": "react-pack",
   "version": "0.1.9",
-  "description": "Gulp Build Tasks for React Component Projects",
+  "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
-  "author": "",
+  "scripts": {
+    "lint": "eslint src",
+    "lib": "gulp lib",
+    "test": "npm run lint"
+  },
   "peerDependencies": {
     "gulp": "^3.9.0"
   },
   "dependencies": {
-    "autoprefixer-loader": "^3.1.0",
+    "autoprefixer": "^6.0.2",
     "babel": "^5.8.23",
     "babel-core": "^5.8.23",
     "babel-eslint": "^4.1.1",
@@ -18,7 +22,6 @@
     "camelcase": "^1.1.0",
     "capitalize": "^1.0.0",
     "css-loader": "^0.18.0",
-    "defaults": "^1.0.2",
     "del": "^2.0.2",
     "eslint": "1.6.0",
     "eslint-plugin-react": "3.5.1",
@@ -41,6 +44,7 @@
     "gulp-util": "^3.0.6",
     "html-loader": "^0.3.0",
     "html-webpack-plugin": "^2.0.4",
+    "ip": "^1.0.2",
     "json-loader": "^0.5.3",
     "less": "^2.5.3",
     "less-loader": "^2.2.1",
@@ -48,6 +52,7 @@
     "node-notifier": "^4.3.1",
     "node-sass": "3.3.2",
     "nyan-progress-webpack-plugin": "^1.1.3",
+    "postcss-loader": "^0.7.0",
     "react-hot-loader": "^1.3.0",
     "react-proxy-loader": "^0.3.3",
     "react-router-loader": "0.4.0",
@@ -63,15 +68,17 @@
     "yargs": "^3.27.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "lint": "echo \"no lint yet\"",
-    "lib": "gulp lib",
-    "unit": "echo \"no tests yet\"",
-    "test": "npm run lint && npm run unit"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luqin/react-component-tools.git"
   },
   "keywords": [
     "react",
     "webpack",
-    "gulp"
+    "gulp",
+    "hot-load",
+    "SASS",
+    "web",
+    "react-hot-load"
   ]
 }

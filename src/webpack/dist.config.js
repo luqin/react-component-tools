@@ -16,16 +16,14 @@ export const jsLoader = 'babel?cacheDirectory';
 
 const baseConfig = {
     entry: undefined,
-
     output: undefined,
-
     externals: undefined,
 
     resolveLoader: getCommon.getResolveLoader(),
 
     module: {
         loaders: [
-            { test: /\.js/, exclude: /node_modules/, loader: 'babel-loader' }
+            {test: /\.js/, exclude: /node_modules/, loader: 'babel-loader'}
         ]
     },
 

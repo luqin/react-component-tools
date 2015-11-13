@@ -1,7 +1,9 @@
 import path from 'path';
+import autoprefixer from 'autoprefixer';
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const AUTOPREFIXER_BROWSERS = [
+    'Android 2.3',
     'Android >= 4',
     'Chrome >= 35',
     'Firefox >= 31',
@@ -45,7 +47,7 @@ export default {
         };
 
         return Object.keys(cssLoaders).map(ext => {
-            let prefix = 'css-loader!autoprefixer-loader?browsers=last 2 version';
+            let prefix = 'css-loader!postcss-loader';
             let extLoaders = prefix + cssLoaders[ext];
             let loader = isDevelopment ? 'style-loader!' + extLoaders : ExtractTextPlugin.extract('style-loader', extLoaders);
             return {
@@ -53,5 +55,9 @@ export default {
                 test: new RegExp('\\.(' + ext + ')$')
             };
         });
+    },
+
+    getPostcssConfig() {
+        return [autoprefixer({browsers: AUTOPREFIXER_BROWSERS})];
     }
 };

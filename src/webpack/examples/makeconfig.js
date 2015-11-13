@@ -1,11 +1,13 @@
 import webpack from 'webpack';
+import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
-import path from 'path';
-let cwd = process.cwd();
+import ip from 'ip';
 
 import NotifyPlugin from './NotifyPlugin';
 import getWebpackCommon from '../getCommon';
+
+const serverIp = ip.address();
 
 let devtools = process.env.CONTINUOUS_INTEGRATION
     ? 'inline-source-map'
@@ -53,6 +55,9 @@ export default function (isDevelopment, config) {
                 loaders: isDevelopment ? ['react-hot', 'babel-loader'] : ['babel-loader']
             }].concat(getWebpackCommon.getLoaders()).concat(getWebpackCommon.getCssLoaders(isDevelopment))
         },
+
+        postcss: getWebpackCommon.getPostcssConfig,
+
         plugins: (function () {
             let plugins = [
                 new webpack.DefinePlugin({
