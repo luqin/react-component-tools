@@ -19,8 +19,8 @@ var taskConfig = {
         }
       }
     },
-    less: {
-      entry: ''
+    scss: {
+      entry: './scss/index.scss'
     }
   },
 

@@ -81,7 +81,7 @@ function initTasks(gulp, config) {
     }
   }
 
-  gutil.log('[react-component-tools]', '\r\n', gutil.colors.green(JSON.stringify(config, null, 2)));
+  gutil.log('[react-pack]', '\r\n', gutil.colors.green(JSON.stringify(config, null, 2)));
 
   gulp.task('env', () => {
     process.env.NODE_ENV = args.production ? 'production' : 'development'; // eslint-disable-line no-undef
