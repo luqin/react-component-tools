@@ -1,5 +1,7 @@
 # React Component Tools
 
+[![Join the chat at https://gitter.im/luqin/react-pack](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/luqin/react-pack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![NPM version][npm-badge]][npm] [![Build Status][travis-ci-image]][travis-ci-url] [![Gitter][gitter-badge]][gitter]
 
 [![Dependency Status][deps-badge]][deps]
