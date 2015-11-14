@@ -40,14 +40,14 @@ export default {
   getCssLoaders(isDevelopment) {
     let cssLoaders = {
       css: '',
-      less: '!less-loader',
-      scss: '!sass-loader',
+      less: '!less-loader?sourceMap',
+      scss: '!sass-loader?sourceMap',
       sass: '!sass-loader?indentedSyntax',
       styl: '!stylus-loader'
     };
 
     return Object.keys(cssLoaders).map(ext => {
-      let prefix = 'css-loader!postcss-loader';
+      let prefix = 'css-loader?sourceMap!postcss-loader';
       let extLoaders = prefix + cssLoaders[ext];
       let loader = isDevelopment ? 'style-loader!' + extLoaders : ExtractTextPlugin.extract('style-loader', extLoaders);
       return {
