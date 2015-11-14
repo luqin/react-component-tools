@@ -1,6 +1,6 @@
 {
-  "name": "react-pack",
-  "version": "0.1.9",
+  "name": "react-component-tools",
+  "version": "0.2.0",
   "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
   "scripts": {
@@ -66,9 +66,11 @@
     "url-loader": "^0.5.6",
     "webpack": "^1.12.6",
     "webpack-dev-server": "^1.12.1",
+    "webpack-plugin-notifier": "0.0.1",
     "yargs": "^3.27.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luqin/react-pack.git"

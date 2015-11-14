@@ -4,7 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
 import ip from 'ip';
 
-import NotifyPlugin from './NotifyPlugin';
+import WebpackNotifierPlugin from 'webpack-plugin-notifier';
 import getWebpackCommon from '../getCommon';
 
 const serverIp = ip.address();
@@ -75,7 +75,7 @@ export default function (isDevelopment, config) {
       ];
       if (isDevelopment) {
         plugins.push(
-          NotifyPlugin,
+          WebpackNotifierPlugin,
           new webpack.HotModuleReplacementPlugin()
         );
       } else {
