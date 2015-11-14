@@ -6,8 +6,8 @@
   "scripts": {
     "build": "gulp lib",
     "lint": "eslint src",
-    "unit": "echo \"no tests yet\"",
-    "test": "npm run lint"
+    "travis": "cd test && npm install && npm run build && gulp build:examples --p && npm start",
+    "test": "npm run lint && npm run travis"
   },
   "peerDependencies": {
     "gulp": "^3.9.0"

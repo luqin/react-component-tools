@@ -3,5 +3,4 @@ node_js:
   - "0.12"
 env:
 script:
- - ./scripts/travis/test.sh
 
