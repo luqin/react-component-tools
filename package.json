@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src",
-    "lib": "gulp lib",
+    "build": "gulp lib",
     "test": "npm run lint"
   },
   "peerDependencies": {
@@ -24,6 +24,7 @@
     "css-loader": "^0.18.0",
     "del": "^2.0.2",
     "eslint": "1.6.0",
+    "eslint-config-airbnb": "0.1.0",
     "eslint-plugin-react": "3.5.1",
     "extract-text-webpack-plugin": "^0.8.2",
     "fbjs": "0.3.2",
@@ -79,6 +80,7 @@
     "hot-load",
     "SASS",
     "web",
-    "react-hot-load"
+    "react-hot-load",
+    "react-component"
   ]
 }

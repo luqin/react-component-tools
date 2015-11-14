@@ -1,15 +1,15 @@
 import bump from 'gulp-bump';
 
 export default function (gulp, config) { // eslint-disable-line no-unused-vars
-    function getBumpTask(type) {
-        return function () {
-            return gulp.src(['./package.json', './bower.json'])
-                .pipe(bump({ type: type }))
-                .pipe(gulp.dest('./'));
-        };
-    }
+  function getBumpTask(type) {
+    return function () {
+      return gulp.src(['./package.json', './bower.json'])
+        .pipe(bump({type: type}))
+        .pipe(gulp.dest('./'));
+    };
+  }
 
-    gulp.task('bump', getBumpTask('patch'));
-    gulp.task('bump:minor', getBumpTask('minor'));
-    gulp.task('bump:major', getBumpTask('major'));
+  gulp.task('bump', getBumpTask('patch'));
+  gulp.task('bump:minor', getBumpTask('minor'));
+  gulp.task('bump:major', getBumpTask('major'));
 }
