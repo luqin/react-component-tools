@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "0.12"
 env:
-  - TEST_SUITE=lint
-  - TEST_SUITE=unit
-script: "npm run-script $TEST_SUITE"
+script:
+ - ./scripts/travis/test.sh
 
