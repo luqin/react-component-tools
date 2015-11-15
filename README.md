@@ -9,9 +9,9 @@
 This package provides common gulp tasks for building react components with:
 
 * Webpack for transforming ES2015+/JSX and creating distribution builds
-* BrowserSync for automatic, efficient rebundling on file changes
+* Live reload for automatic, efficient rebundling on file changes
 * Connect for serving examples during development, with live-reload integration
-* SASS stylesheets for examples
+* SASS/LESS/PostCSS... stylesheets for examples
 * Publishing examples to Github Pages
 * Publishing packages to npm and bower
 

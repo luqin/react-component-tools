@@ -9,3 +9,7 @@ gulp.task('lib', ['lib:clean'], function () {
     .pipe(babel())// auto use .babelrc
     .pipe(gulp.dest('./lib'));
 });
+
+gulp.task('watch:lib', ['lib'], function () {
+  return gulp.watch('./src/**/*.js', ['lib']);
+});

@@ -3,10 +3,14 @@
   "version": "0.2.0",
   "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
+  "bin": {
+    "react-pack": "./bin/react-pack.js",
+    "react-pack-run": "./bin/react-pack-run.js"
+  },
   "scripts": {
     "build": "gulp lib",
     "lint": "eslint src",
-    "travis": "cd test && npm install && npm run build && gulp build:examples --p && npm start",
+    "travis": "cd test && npm install && npm test",
     "test": "npm run lint && npm run travis"
   },
   "peerDependencies": {
@@ -22,6 +26,8 @@
     "babel-runtime": "^5.8.20",
     "camelcase": "^1.1.0",
     "capitalize": "^1.0.0",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
     "css-loader": "^0.23.0",
     "del": "^2.0.2",
     "eslint": "1.9.0",
@@ -69,8 +75,7 @@
     "webpack-plugin-notifier": "0.1.0",
     "yargs": "^3.27.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luqin/react-pack.git"

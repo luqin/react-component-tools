@@ -8,7 +8,7 @@
     "gh-pages": "gulp publish:examples",
     "lint": "eslint src examples",
     "start": "gulp dev",
-    "test": "npm run lint"
+    "test": "babel-node test/index.js"
   },
   "repository": {
     "type": "git",
