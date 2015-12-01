@@ -3,5 +3,7 @@ node_js:
   - 'stable'
   - '0.12'
 env:
+before_script:
+  - npm install -g cnpm
 script:
 

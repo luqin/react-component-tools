@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gulp lib",
     "lint": "eslint src",
-    "travis": "cd test && npm install && npm test",
+    "travis": "cd test && cnpm install && npm test",
     "test": "npm run lint && npm run travis"
   },
   "peerDependencies": {
