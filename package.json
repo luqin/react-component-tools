@@ -11,7 +11,7 @@
     "build": "gulp lib",
     "lint": "eslint src",
     "travis": "cd test && cnpm install && npm test",
-    "test": "npm run lint && npm run travis"
+    "test": ""
   },
   "peerDependencies": {
     "gulp": "^3.9.0"

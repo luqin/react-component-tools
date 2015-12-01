@@ -6,4 +6,4 @@ env:
 before_script:
   - npm install -g cnpm
 script:
-
+  - npm run lint && npm run travis
