@@ -5,5 +5,10 @@ node_js:
 env:
 before_script:
   - npm install -g cnpm
+  - cnpm -v
 script:
-  - npm run lint && npm run travis
+  - npm run lint
+  - cd test
+  - cnpm install && npm test
+  - rm -rf node_modules
+  - cnpm install && npm test
