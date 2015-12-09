@@ -9,6 +9,5 @@ before_script:
 script:
   - npm run lint
   - cd test
-  - cnpm install && npm test
+  - npm install && npm test
   - rm -rf node_modules
-  - cnpm install && npm test
