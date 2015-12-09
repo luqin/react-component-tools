@@ -106,7 +106,7 @@ You can customise the tasks to match your project structure by changing the conf
 
 
 [npm-badge]: http://badge.fury.io/js/react-pack.svg
-[npm]: http://badge.fury.io/js/react-pack
+[npm]: https://www.npmjs.com/package/react-pack
 
 [deps-badge]: https://david-dm.org/luqin/react-pack.svg
 [deps]: https://david-dm.org/luqin/react-pack
