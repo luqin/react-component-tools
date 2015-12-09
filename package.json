@@ -1,6 +1,6 @@
 {
   "name": "react-pack",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
   "bin": {
@@ -32,7 +32,7 @@
     "eslint": "1.9.0",
     "eslint-config-airbnb": "1.0.0",
     "eslint-plugin-react": "3.8.0",
-    "extract-text-webpack-plugin": "^0.8.2",
+    "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
@@ -48,7 +48,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.6",
-    "html-loader": "^0.3.0",
+    "html-loader": "^0.4.0",
     "html-webpack-plugin": "^2.0.4",
     "ip": "^1.0.2",
     "json-loader": "^0.5.3",
@@ -69,7 +69,7 @@
     "stylus-loader": "^1.4.0",
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.5.6",
-    "webpack": "^1.12.6",
+    "webpack": "^1.12.9",
     "webpack-dev-server": "^1.12.1",
     "webpack-plugin-notifier": "0.1.0",
     "yargs": "^3.27.0"
