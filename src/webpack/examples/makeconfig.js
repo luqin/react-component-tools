@@ -2,12 +2,12 @@ import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
-import ip from 'ip';
+import getServerIP from '../../getServerIP';
 
 import WebpackNotifierPlugin from 'webpack-plugin-notifier';
 import getWebpackCommon from '../getCommon';
 
-const serverIp = ip.address();
+const serverIP = getServerIP();
 
 let devtools = process.env.CONTINUOUS_INTEGRATION
   ? 'inline-source-map'
@@ -28,7 +28,7 @@ export default function (isDevelopment, config) {
 
     entry: {
       app: isDevelopment ? [
-        `webpack-dev-server/client?http://${serverIp}:${port}`,
+        `webpack-dev-server/client?http://${serverIP}:${port}`,
         // Why only-dev-server instead of dev-server:
         // https://github.com/webpack/webpack/issues/418#issuecomment-54288041
         'webpack/hot/only-dev-server',
@@ -40,7 +40,7 @@ export default function (isDevelopment, config) {
       path: outputPath,
       filename: '[name].js',
       chunkFilename: '[name]-[chunkhash].js',
-      publicPath: `http://localhost:${port}/dist/`
+      publicPath: `http://${serverIP}:${port}/dist/`
     } : {
       path: outputPath,
       filename: '[name].js',

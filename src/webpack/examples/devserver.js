@@ -1,11 +1,12 @@
 import gutil from 'gulp-util';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import ip from 'ip';
+
+import getServerIP from '../../getServerIP';
 
 export default function (webpackConfig, serverConfig) {
   let {port} = serverConfig;
-  const serverIp = ip.address();
+  const serverIP = getServerIP();
   return function (callback) {
     new WebpackDevServer(webpack(webpackConfig), {
       contentBase: '../build',
@@ -32,7 +33,7 @@ export default function (webpackConfig, serverConfig) {
       if (err) {
         throw new gutil.PluginError('webpack-dev-server', err);
       }
-      gutil.log('[webpack-dev-server]', `${serverIp}:${port}/dist/app.js`);
+      gutil.log('[webpack-dev-server]', `${serverIP}:${port}/dist/app.js`);
 
       callback();
     });

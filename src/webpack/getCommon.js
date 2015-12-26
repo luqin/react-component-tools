@@ -22,18 +22,15 @@ export default {
 
   getLoaders() {
     return [
-      {test: /\.txt/, loader: 'file-loader?name=[path][name].[ext]'},
-      {test: /\.gif/, loader: 'url-loader?limit=10000&mimetype=image/gif'},
-      {test: /\.jpg/, loader: 'url-loader?limit=10000&mimetype=image/jpg'},
-      {test: /\.png/, loader: 'url-loader?limit=10000&mimetype=image/png'},
-      {test: /\.svg/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml'},
-      {
-        test: /\.eot/,
-        loader: 'url-loader?limit=100000&mimetype=application/vnd.ms-fontobject'
-      },
-      {test: /\.woff2/, loader: 'url-loader?limit=100000&mimetype=application/font-woff2'},
-      {test: /\.woff/, loader: 'url-loader?limit=100000&mimetype=application/font-woff'},
-      {test: /\.ttf/, loader: 'url-loader?limit=100000&mimetype=application/font-ttf'}
+      { test: /\.txt/, loader: 'file-loader?name=[path][name].[ext]' },
+      { test: /\.gif/, loader: 'url-loader?limit=10000&mimetype=image/gif' },
+      { test: /\.jpg/, loader: 'url-loader?limit=10000&mimetype=image/jpg' },
+      { test: /\.png/, loader: 'url-loader?limit=10000&mimetype=image/png' },
+      { test: /\.svg/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
+      { test: /\.eot/, loader: 'url-loader?limit=100000&mimetype=application/vnd.ms-fontobject' },
+      { test: /\.woff2/, loader: 'url-loader?limit=100000&mimetype=application/font-woff2' },
+      { test: /\.woff/, loader: 'url-loader?limit=100000&mimetype=application/font-woff' },
+      { test: /\.ttf/, loader: 'url-loader?limit=100000&mimetype=application/font-ttf' }
     ];
   },
 
@@ -49,7 +46,9 @@ export default {
     return Object.keys(cssLoaders).map(ext => {
       let prefix = 'css-loader?sourceMap!postcss-loader';
       let extLoaders = prefix + cssLoaders[ext];
-      let loader = isDevelopment ? 'style-loader!' + extLoaders : ExtractTextPlugin.extract('style-loader', extLoaders);
+      let loader = isDevelopment ?
+        'style-loader!' + extLoaders
+        : ExtractTextPlugin.extract('style-loader', extLoaders);
       return {
         loader: loader,
         test: new RegExp('\\.(' + ext + ')$')
@@ -58,6 +57,6 @@ export default {
   },
 
   getPostcssConfig() {
-    return [autoprefixer({browsers: AUTOPREFIXER_BROWSERS})];
+    return [autoprefixer({ browsers: AUTOPREFIXER_BROWSERS })];
   }
 };

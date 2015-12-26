@@ -6,6 +6,8 @@ import makeWebpackConfig from '../webpack/examples/makeconfig';
 import webpackBuild from '../webpack/examples/build';
 import webpackDevServer from '../webpack/examples/devserver';
 
+import getServerIP from '../getServerIP';
+
 module.exports = function (gulp, config) {
   const exampleConfig = config.example;
   const port = config.devServer.webpackDevServerPort;
@@ -33,7 +35,7 @@ module.exports = function (gulp, config) {
     return replaceHTMLResource({
       src: exampleConfig.src + '/' + exampleConfig.index,
       dist: exampleConfig.dist,
-      js: `http://localhost:${port}/dist/app.js`,
+      js: `http://${getServerIP()}:${port}/dist/app.js`,
       links: ''
     }).pipe(connect.reload());
   });
