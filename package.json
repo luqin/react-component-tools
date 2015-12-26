@@ -74,7 +74,7 @@
     "eslint-config-airbnb": "1.0.0",
     "eslint-plugin-react": "3.8.0",
     "extract-text-webpack-plugin": "^0.9.1",
-    "react-router-loader": "^0.4.1",
+    "react-router-loader": "^0.4.1"
   },
   "repository": {
     "type": "git",
