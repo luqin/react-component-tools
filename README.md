@@ -128,9 +128,9 @@ var taskConfig = {
 	},
 
 	example: {
-		entry: 'example/src/app.js',
-		dist: 'example/dist',
-		html: 'example/src/index.html',
+		entry: 'examples/src/app.js',
+		dist: 'examples/dist',
+		html: 'examples/src/index.html',
 		files: [
 			'README.md'
 		]
