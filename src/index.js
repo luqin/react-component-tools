@@ -4,7 +4,6 @@ import camelCase from 'camelcase';
 import _ from 'lodash';
 import yargs from 'yargs';
 import gutil from 'gulp-util';
-import path from 'path';
 
 import readPackageJSON from './readPackageJSON';
 
