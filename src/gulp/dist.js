@@ -57,7 +57,8 @@ export default function (gulp, config) {
         .pipe(gulp.dest(dist))
         .pipe(rename(config.component.pkgName + '.min.css'))
         .pipe(minifyCSS())
-        .pipe(gulp.dest(dist));
+        .pipe(gulp.dest(dist))
+        .pipe(gsize({ title: 'build:dist:less' }));
     });
     buildTasks.push('build:dist:less');
   }

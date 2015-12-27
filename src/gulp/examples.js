@@ -1,5 +1,5 @@
 import del from 'del';
-import connect from 'gulp-connect';
+import gsize from 'gulp-size';
 
 import makeWebpackConfig from '../webpack/examples/makeconfig';
 import webpackBuild from '../webpack/examples/build';
@@ -14,7 +14,7 @@ module.exports = function (gulp, config) {
   gulp.task('build:example:files', function () {
     return gulp.src(exampleConfig.files)
       .pipe(gulp.dest(exampleConfig.dist))
-      .pipe(connect.reload());
+      .pipe(gsize({ title: 'build:example:files' }));
   });
 
   gulp.task('build:example:webpack', webpackBuild(makeWebpackConfig(false, config)));

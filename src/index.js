@@ -91,7 +91,7 @@ function initTasks(gulp, _config) {
     .argv;
   let config = prepareConfig(_config);
 
-  gutil.log('[react-pack] init...');
+  gutil.log('[react-component-tools] init...');
 
   gulp.task('env', () => {
     process.env.NODE_ENV = args.production ? 'production' : 'development'; // eslint-disable-line no-undef
