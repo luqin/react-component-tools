@@ -1,1 +1,5 @@
-test
+*.idea
+
+examples
+src
+
