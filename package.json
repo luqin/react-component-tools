@@ -1,11 +1,11 @@
 {
-  "name": "react-pack",
-  "version": "0.4.1",
+  "name": "react-component-tools",
+  "version": "0.5.0",
   "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
   "bin": {
-    "react-pack": "./bin/react-pack.js",
-    "react-pack-run": "./bin/react-pack-run.js"
+    "rt": "./bin/react-pack.js",
+    "rt-run": "./bin/react-pack-run.js"
   },
   "scripts": {
     "build": "gulp lib",
