@@ -9,7 +9,7 @@ export default function (webpackConfig, serverConfig) {
   const serverIP = getServerIP();
   return function (callback) {
     new WebpackDevServer(webpack(webpackConfig), {
-      contentBase: '../build',
+      contentBase: webpackConfig.output.path,
       hot: true,
       publicPath: webpackConfig.output.publicPath,
       // Unfortunately quiet swallows everything even error so it can't be used.
@@ -33,7 +33,7 @@ export default function (webpackConfig, serverConfig) {
       if (err) {
         throw new gutil.PluginError('webpack-dev-server', err);
       }
-      gutil.log('[webpack-dev-server]', `${serverIP}:${port}/dist/app.js`);
+      gutil.log('[webpack-dev-server]', `${serverIP}:${port}/`);
 
       callback();
     });

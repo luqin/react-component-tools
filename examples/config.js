@@ -3,20 +3,13 @@ var path = require('path');
 var taskConfig = {
 
   component: {
-    name: 'react-component',
-    lib: './lib',
-    scripts: {
-      entry: './src/index.js',
-      output: {
-        library: 'ReactComponent'
-      },
-      externals: {
-        react: {
-          root: 'React',
-          commonjs2: 'react',
-          commonjs: 'react',
-          amd: 'react'
-        }
+    name: 'ReactComponent',
+    dependencies: {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react'
       }
     },
     scss: {

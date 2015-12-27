@@ -1,10 +1,11 @@
 import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
-import getServerIP from '../../getServerIP';
-
 import WebpackNotifierPlugin from 'webpack-plugin-notifier';
+
+import getServerIP from '../../getServerIP';
 import getWebpackCommon from '../getCommon';
 
 const serverIP = getServerIP();
@@ -16,31 +17,46 @@ let devtools = process.env.CONTINUOUS_INTEGRATION
   // http://webpack.github.io/docs/configuration.html#devtool
   : 'cheap-module-eval-source-map';
 
-export default function (isDevelopment, config) {
-  let entryPath = config.example.src + '/' + config.example.script;
-  let outputPath = path.resolve(config.example.dist);
+/**
+ *
+ * @param {Array} configs
+ * @returns {Array}
+ */
+function buildHtmlPlugins(configs) {
+  return configs.map(item => {
+    return new HtmlWebpackPlugin(item);
+  });
+}
 
-  let port = config.devServer.webpackDevServerPort;
+export default function (isDevelopment, config) {
+  let outputPath = path.resolve(config.example.dist);
+  let {port} = config.example;
+  let entry = {};
+  let htmlPlugins = buildHtmlPlugins(config.example.html);
+
+  Object.keys(config.example.entry).forEach(name => {
+    let entryPath = config.example.entry[name];
+    entry[name] = isDevelopment ? [
+      `webpack-dev-server/client?http://${serverIP}:${port}`,
+      // Why only-dev-server instead of dev-server:
+      // https://github.com/webpack/webpack/issues/418#issuecomment-54288041
+      'webpack/hot/only-dev-server',
+      entryPath
+    ] : [entryPath];
+  });
+
   return {
+    entry: entry,
+
     cache: isDevelopment,
     debug: isDevelopment,
     devtool: isDevelopment ? devtools : '',
-
-    entry: {
-      app: isDevelopment ? [
-        `webpack-dev-server/client?http://${serverIP}:${port}`,
-        // Why only-dev-server instead of dev-server:
-        // https://github.com/webpack/webpack/issues/418#issuecomment-54288041
-        'webpack/hot/only-dev-server',
-        entryPath
-      ] : [entryPath]
-    },
 
     output: isDevelopment ? {
       path: outputPath,
       filename: '[name].js',
       chunkFilename: '[name]-[chunkhash].js',
-      publicPath: `http://${serverIP}:${port}/dist/`
+      publicPath: `http://${serverIP}:${port}/`
     } : {
       path: outputPath,
       filename: '[name].js',
@@ -53,7 +69,8 @@ export default function (isDevelopment, config) {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loaders: isDevelopment ? ['react-hot', 'babel-loader'] : ['babel-loader']
-      }].concat(getWebpackCommon.getLoaders()).concat(getWebpackCommon.getCssLoaders(isDevelopment))
+      }].concat(getWebpackCommon.getLoaders())
+        .concat(getWebpackCommon.getCssLoaders(isDevelopment))
     },
 
     postcss: getWebpackCommon.getPostcssConfig,
@@ -71,7 +88,8 @@ export default function (isDevelopment, config) {
           jQuery: 'jquery',
           'window.$': 'jquery',
           'window.jQuery': 'jquery'
-        })
+        }),
+        ...htmlPlugins
       ];
       if (isDevelopment) {
         plugins.push(
@@ -82,7 +100,7 @@ export default function (isDevelopment, config) {
         plugins.push(
           // Render styles into separate cacheable file to prevent FOUC and
           // optimize for critical rendering path.
-          new ExtractTextPlugin('app.css', {
+          new ExtractTextPlugin('[name].css', {
             allChunks: true
           }),
           new NyanProgressPlugin(),
@@ -112,7 +130,7 @@ export default function (isDevelopment, config) {
     resolve: {
       extensions: ['', '.js', '.jsx'],
       modulesDirectories: ['node_modules', 'web_modules'],
-      alias: config.example.alias
+      alias: config.alias
     }
   };
 }

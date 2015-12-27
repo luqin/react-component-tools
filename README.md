@@ -92,7 +92,7 @@ Required config keys are:
 * `component.name` - controls the standalone module name
 * `component.dist` - the directory to build the distribution to
 * `component.pkgName` - the name of the package that will be exported by the component (**must match the name of your package on npm**)
-* `component.dependencies[]` - webpack externals, array of common dependencies that will be excluded from the build
+* `component.dependencies{}` - webpack externals, array of common dependencies that will be excluded from the build
 * `component.less` - the entrypoint for the component stylesheet, if you're using less to provide one
 * `component.sass` - the entrypoint for the component stylesheet, if you're using sass to provide one
 
@@ -100,10 +100,13 @@ Required config keys are:
 
 * `example.src` - the directory to load the source files from
 * `example.dist` - the directory to build the distribution to
-* `example.entry[]` - scripts will be transpiled with babel and bundled by webpack
-* `example.alias{}` - webpack alias
-* `example.port` - port to serve examples on, defaults to `3000`
+* `example.entry{}` - scripts will be transpiled with babel and bundled by webpack
 * `example.files[]` - files will be copied as-is into the `example.dist` folder
+* `example.port` - port to serve examples on, defaults to `8888`
+
+**`Alias`**
+
+* `alias{}` - webpack alias
 
 ## Example
 
@@ -124,15 +127,15 @@ var taskConfig = {
         amd: 'react'
       }
     },
-    sass: 'scss/my-component.scss' // or `less: 'less/my-component.less'`
+    sass: './scss/my-component.scss' // or `less: 'less/my-component.less'`
   },
 
   example: {
-    entry: 'examples/src/app.js',
-    dist: 'examples/dist',
-    html: 'examples/src/index.html',
+    dist: './examples/dist',
+    entry: './examples/src/app.js',
+    html: './examples/src/index.html',
     files: [
-      'README.md'
+      './README.md'
     ]
   }
 

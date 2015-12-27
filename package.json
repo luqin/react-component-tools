@@ -27,6 +27,7 @@
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "css-loader": "^0.23.1",
+    "defaults": "^1.0.3",
     "del": "^2.0.2",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
@@ -36,6 +37,7 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-git": "^1.6.0",
     "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.1.1",
@@ -74,20 +76,27 @@
     "eslint-config-airbnb": "1.0.0",
     "eslint-plugin-react": "3.8.0",
     "extract-text-webpack-plugin": "^0.9.1",
+    "open": "0.0.5",
     "react-router-loader": "^0.4.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/luqin/react-pack.git"
+    "url": "https://github.com/luqin/react-pack"
   },
   "keywords": [
     "react",
     "webpack",
     "gulp",
     "hot-load",
-    "SASS",
+    "sass",
+    "scss",
+    "less",
     "web",
-    "react-hot-load",
-    "react-component"
+    "hot-load",
+    "react-component",
+    "tool",
+    "tools",
+    "task",
+    "tasks"
   ]
 }

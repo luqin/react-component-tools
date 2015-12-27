@@ -1,65 +1,35 @@
+import defaults from 'defaults';
 import capitalize from 'capitalize';
 import camelCase from 'camelcase';
+import _ from 'lodash';
 import yargs from 'yargs';
 import gutil from 'gulp-util';
-import _ from 'lodash';
+import path from 'path';
 
-// Extract package.json metadata
-function readPackageJSON() {
-  let pkg = JSON.parse(require('fs').readFileSync('./package.json'));
-  let dependencies = [];
-  if (pkg) {
-    dependencies.push(Object.keys(pkg.dependencies));
-  }
-  if (pkg.peerDependencies) {
-    dependencies.push(Object.keys(pkg.peerDependencies));
-  }
+import readPackageJSON from './readPackageJSON';
 
-  return {
-    name: pkg.name,
-    deps: dependencies
-  };
-}
+function prepareConfig(_config) {
+  const pkg = readPackageJSON();
+  const name = capitalize(camelCase(_config.component.pkgName || pkg.name));
 
-/**
- * This package exports a function that binds tasks to a gulp instance
- * based on the provided config.
- */
-function initTasks(gulp, config) {
-  const args = yargs
-    .alias('p', 'production')
-    .argv;
-
-
-  let pkg = readPackageJSON();
-  let name = capitalize(camelCase(config.component.pkgName || pkg.name));
+  let config = defaults(_config, { alias: pkg.alias });
 
   // component
-  config.component = Object.assign({
+  config.component = defaults(config.component, {
+    entry: './src/index.js',
     pkgName: pkg.name,
-    dependencies: pkg.deps,
     name: name,
+    dependencies: pkg.deps,
+    src: './src',
     lib: './lib',
     dist: './dist',
-    scripts: {
-      entry: './src/index.js',
-      output: {
-        library: name
-      }
-    }
-  }, config.component);
+  });
 
-  // devServer
-  let defaultDevServer = {
-    port: 3000,
-    webpackDevServerPort: 8888,
-    openBrowser: true
-  };
-  if (config.devServer) {
-    config.devServer = Object.assign({}, defaultDevServer, config.devServer);
-  } else {
-    config.devServer = defaultDevServer;
-  }
+  config.bump = config.bump || {};
+  config.bump = defaults(config.bump, {
+    npm: true,
+    bower: false,
+  });
 
   // example
   if (config.example) {
@@ -67,21 +37,62 @@ function initTasks(gulp, config) {
       config.example = {};
     }
 
-    config.example = Object.assign({
-      src: './examples/src',
+    defaults(config.example, {
       dist: './examples/dist',
-      index: 'index.html',
+      entry: './examples/src/app.js',
       files: [],
-      script: 'index.js'
-    }, config.example);
 
-    let {scripts} = config.example;
-    if (_.isArray(scripts) && scripts.length === 1) {
-      config.example.script = scripts[0];
+      port: 8888,
+      openBrowser: true,
+    });
+
+    let { entry, html } = config.example;
+
+    if (typeof entry === 'string') {
+      config.example.entry = {
+        app: entry
+      };
     }
+
+    if (!html) {
+      html = [{
+        title: pkg.name,
+      }];
+    }
+    if (!_.isArray(html)) {
+      html = [html];
+    }
+
+    config.example.html = html.map(item => {
+      let h;
+
+      if (typeof item === 'string') {
+        h = {
+          title: pkg.name,
+          template: item,
+        };
+      } else {
+        h = item;
+      }
+
+      return h;
+    });
   }
 
-  gutil.log('[react-pack]', '\r\n', gutil.colors.green(JSON.stringify(config, null, 2)));
+  return config;
+}
+
+/**
+ * This package exports a function that binds tasks to a gulp instance
+ * based on the provided config.
+ */
+function initTasks(gulp, _config) {
+  const args = yargs
+    .alias('p', 'production')
+    .argv;
+  let config = prepareConfig(_config);
+
+  gutil.log('[react-pack] init...');
 
   gulp.task('env', () => {
     process.env.NODE_ENV = args.production ? 'production' : 'development'; // eslint-disable-line no-undef
