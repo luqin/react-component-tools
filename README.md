@@ -29,9 +29,9 @@ The tasks assume you are following the following conventions for your project:
 * A transpiled version will be published to a lib folder (for Node.js, Browserify and Webpack)
 * A standalone package will be published to a dist folder (for Bower)
 * Examples consist of
-	* Static file(s) (e.g. html, images, etc)
-	* One or more stylesheets to be generated with SASS/LESS/PostCSS/stylus...
-	* One or more scripts to be bundled with Webpack
+  * Static file(s) (e.g. html, images, etc)
+  * One or more stylesheets to be generated with SASS/LESS/PostCSS/stylus...
+  * One or more scripts to be bundled with Webpack
 * Examples will be packaged into an examples dist folder, and published to github pages
 
 ### Example project structure
@@ -41,25 +41,25 @@ bower.json
 package.json
 gulpfile.js
 src
-	MyComponent.js
+  MyComponent.js
 sass // or less
-	my-component.scss
+  my-component.scss
 lib
-	// contains transpiled source
-	MyComponent.js
+  // contains transpiled source
+  MyComponent.js
 dist
-	// contains packaged component
-    my-component.js
-    my-component.min.js
-    my-component.css
-    my-component.min.css
+  // contains packaged component
+  my-component.js
+  my-component.min.js
+  my-component.css
+  my-component.min.css
 example
-	dist
-		// contains built examples
-	src
-		app.js
-		app.scss
-		index.html
+  dist
+    // contains built examples
+  src
+    app.js
+    app.scss
+    index.html
 ```
 
 For a complete example see [react-component-starter](https://github.com/luqin/react-component-tools/tree/master/examples)
@@ -113,9 +113,9 @@ var initGulpTasks = require('react-component-tools');
 
 var taskConfig = {
 
-	component: {
-		name: 'MyComponent',
-		dependencies: {
+  component: {
+    name: 'MyComponent',
+    dependencies: {
       classnames: 'classnames',
       react: {
         root: 'React',
@@ -124,17 +124,17 @@ var taskConfig = {
         amd: 'react'
       }
     },
-		sass: 'scss/my-component.scss' // or `less: 'less/my-component.less'`
-	},
+    sass: 'scss/my-component.scss' // or `less: 'less/my-component.less'`
+  },
 
-	example: {
-		entry: 'examples/src/app.js',
-		dist: 'examples/dist',
-		html: 'examples/src/index.html',
-		files: [
-			'README.md'
-		]
-	}
+  example: {
+    entry: 'examples/src/app.js',
+    dist: 'examples/dist',
+    html: 'examples/src/index.html',
+    files: [
+      'README.md'
+    ]
+  }
 
 };
 
