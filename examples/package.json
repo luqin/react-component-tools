@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build:lib",
     "gh-pages": "gulp publish:examples",
-    "lint": "eslint src examples",
+    "lint": "eslint src examples/src",
     "start": "gulp dev",
     "test": "npm run lint"
   },
