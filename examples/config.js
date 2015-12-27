@@ -12,20 +12,33 @@ var taskConfig = {
         amd: 'react'
       }
     },
-    scss: {
-      entry: './scss/index.scss'
-    }
+    scss: './scss/index.scss'
+  },
+
+  alias: {
+    'react-component': path.resolve(__dirname, './src')
   },
 
   example: {
-    src: './examples/src',
     dist: './examples/dist',
-    index: 'index.html',
-    script: 'js/app.js',
-    alias: {
-      'react-component': path.resolve(__dirname, './src')
+    entry: {
+      app: './examples/src/js/app.js',
+      b: './examples/src/js/app.js'
     },
-    files: []
+    html: [
+      {
+        chunks: ['app'],
+        template: './examples/src/index.html'
+      },
+      {
+        title: 'b',
+        filename: 'b.html',
+        chunks: ['b']
+      }
+    ],
+    files: [
+      './examples/src/c.html'
+    ]
   }
 
 };
