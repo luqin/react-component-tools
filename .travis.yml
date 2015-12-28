@@ -9,9 +9,9 @@ before_script:
 script:
   - npm run lint
   - npm run build
+  - rm -rf node_modules
   - cd examples
   - npm install
   - npm test
   - gulp build
   - gulp build --p
-  - rm -rf node_modules
