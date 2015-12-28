@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luqin/react-pack.git"
+    "url": "https://github.com/luqin/react-pack"
   },
   "license": "ISC",
   "peerDependencies": {
