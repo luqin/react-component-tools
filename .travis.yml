@@ -8,6 +8,7 @@ before_script:
   - cnpm -v
 script:
   - npm run lint
+  - npm run build
   - cd examples
   - npm install
   - npm test
