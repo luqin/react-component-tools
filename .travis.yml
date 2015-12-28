@@ -4,25 +4,16 @@ node_js:
   - '0.12'
 env:
 before_script:
-  - npm install -g gulp cnpm
+  - npm install -g gulp
   - gulp -v
-  - cnpm -v
 script:
   - npm run lint
   - npm run build
 
   - rm -rf node_modules
-  - cnpm install
-  - rm -rf node_modules
 
   - cd examples
   - npm install
-  - npm test
-  - gulp build
-  - gulp build --p
-
-  - rm -rf node_modules
-  - cnpm install
   - npm test
   - gulp build
   - gulp build --p
