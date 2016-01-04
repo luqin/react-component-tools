@@ -149,12 +149,16 @@ initGulpTasks(gulp, taskConfig);
 
 * dev
   * `gulp dev`
+  * `gulp dev:openBrowser`
 * lib
+  * `gulp clean:lib`
   * `gulp build:lib`
   * `gulp watch:lib`
 * dist
+  * `gulp clean:dist`
   * `gulp build:dist`
 * examples
+  * `gulp clean:examples`
   * `gulp build:examples`
   * `gulp watch:examples`
 * build
