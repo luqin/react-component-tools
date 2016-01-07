@@ -18,11 +18,7 @@ class Login extends React.Component {
     let data = {
       username: this.ref.username.value,
       pwd: this.ref.pwd.value,
-    }
-
-    $.ajax({
-      data: data
-    });
+    };
   }
 
   render() {
