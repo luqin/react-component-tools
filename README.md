@@ -1,6 +1,6 @@
 # React Component Tools
 
-[![NPM version][npm-badge]][npm] [![Build Status][travis-ci-image]][travis-ci-url]
+[![NPM version][npm-badge]][npm] [![Build Status][travis-ci-image]][travis-ci-url] [![CircleCI Status][circleci-badge]][circleci] 
 
 [![Dependency Status][deps-badge]][deps]
 [![devDependency Status][dev-deps-badge]][dev-deps]
@@ -197,6 +197,9 @@ Please let me know if you think anything could be done better or you'd like to s
 
 [travis-ci-image]: https://travis-ci.org/luqin/react-component-tools.svg
 [travis-ci-url]: https://travis-ci.org/luqin/react-component-tools
+
+[circleci]: https://circleci.com/gh/luqin/react-component-tools
+[circleci-badge]: https://img.shields.io/circleci/project/luqin/react-component-tools/master.svg?style=flat&label=circle
 
 [react-component-gulp-tasks]: https://github.com/JedWatson/react-component-gulp-tasks
 
