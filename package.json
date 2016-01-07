@@ -22,7 +22,7 @@
     "babel-loader": "^5.3.2",
     "babel-plugin-object-assign": "^1.2.1",
     "babel-runtime": "^5.8.20",
-    "camelcase": "^1.1.0",
+    "camelcase": "^2.0.1",
     "capitalize": "^1.0.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
