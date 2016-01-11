@@ -15,10 +15,12 @@ class Login extends React.Component {
   }
 
   handleLogin() {
+    /*
     let data = {
       username: this.ref.username.value,
       pwd: this.ref.pwd.value,
     };
+    */
   }
 
   render() {
