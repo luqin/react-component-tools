@@ -2,7 +2,7 @@ import del from 'del';
 import gutil from 'gulp-util';
 import less from 'gulp-less';
 import sass from 'gulp-sass';
-import minifyCSS from 'gulp-minify-css';
+import cleanCSS from 'gulp-clean-css';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import gsize from 'gulp-size';
@@ -56,7 +56,7 @@ export default function (gulp, config) {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(dist))
         .pipe(rename(config.component.pkgName + '.min.css'))
-        .pipe(minifyCSS())
+        .pipe(cleanCSS())
         .pipe(gulp.dest(dist))
         .pipe(gsize({ title: 'build:dist:less' }));
     });
@@ -72,7 +72,7 @@ export default function (gulp, config) {
       .on('error', console.error.bind(console)) // eslint-disable-line no-console
       .pipe(gulp.dest(dist))
       .pipe(rename(config.component.pkgName + '.min.css'))
-      .pipe(minifyCSS())
+      .pipe(cleanCSS())
       .pipe(gulp.dest(dist))
       .pipe(gsize({ title: title }));
   }
