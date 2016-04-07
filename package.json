@@ -1,6 +1,6 @@
 {
   "name": "react-component-tools",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
   "bin": {
