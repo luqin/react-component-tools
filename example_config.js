@@ -27,12 +27,14 @@ var config = {
     entry: {
       app: './examples/src/app.js'
     },
-    html: [{
-      title: 'My Component 1',
-    }, {
-      title: 'My Component 2',
-      template: './examples/src/index.html',
-    }],
+    html: [
+      {
+        title: 'My Component 1',
+      }, {
+        title: 'My Component 2',
+        template: './examples/src/index.html',
+      }
+    ],
     files: [
       './README.md'
     ],

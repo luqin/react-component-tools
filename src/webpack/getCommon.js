@@ -22,7 +22,7 @@ export default {
 
   getLoaders() {
     return [
-      { test: /\.txt/, loader: 'file-loader?name=[path][name].[ext]' },
+      { test: /\.txt/, loader: 'file-loader?name=[name]-[hash].[ext]' },
       { test: /\.gif/, loader: 'url-loader?limit=10000&mimetype=image/gif' },
       { test: /\.jpg/, loader: 'url-loader?limit=10000&mimetype=image/jpg' },
       { test: /\.png/, loader: 'url-loader?limit=10000&mimetype=image/png' },
