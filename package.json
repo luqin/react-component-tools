@@ -1,6 +1,6 @@
 {
   "name": "react-component-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common gulp tasks for building react components, examples. Webpack, Gulp, Babel, SASS, LESS, Live reload, React hot reload",
   "main": "lib/index.js",
   "bin": {
@@ -10,6 +10,7 @@
   "scripts": {
     "build": "gulp lib",
     "lint": "eslint src",
+    "prepublish": "npm run build",
     "test": ""
   },
   "peerDependencies": {
