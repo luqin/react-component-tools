@@ -33,7 +33,6 @@
     "del": "^2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "gulp": "^3.9.1",
     "gulp-babel": "^5.2.1",
     "gulp-bump": "^2.1.0",
     "gulp-clean-css": "^2.0.4",
@@ -78,7 +77,8 @@
     "babel-eslint": "^4.1.1",
     "eslint": "1.9.0",
     "eslint-config-airbnb": "1.0.0",
-    "eslint-plugin-react": "3.8.0"
+    "eslint-plugin-react": "3.8.0",
+    "gulp": "^3.9.1"
   },
   "repository": {
     "type": "git",
