@@ -25,7 +25,8 @@ export default function (webpackConfig, serverConfig) {
         timings: true,
         chunks: false,
         chunkModules: false
-      }
+      },
+      headers: { 'Access-Control-Allow-Origin': '*', 'X-react-component-tools': 'true' },
       // Why '0.0.0.0' and 'localhost'? Because it works for remote machines.
       // https://github.com/webpack/webpack-dev-server/issues/151#issuecomment-104643642
     }).listen(port, '0.0.0.0', function (err) {
